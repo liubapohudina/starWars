@@ -1,0 +1,90 @@
+:root {
+  /* colors */
+  --dark-purple: #32012F;
+  --grey: #E2DFD0;
+  --vintage: #524C42;
+  --orange: #F97300;
+  --dark-opacity: rgba(192, 192, 192, 0.5);
+  --orange-opacity: rgba(255, 165, 0, 0.5);
+
+  /* font */
+  --primary-font: "Roboto Slab", serif;
+
+  /* fontWeight */
+   --regular: 400;
+   --medium: 500;
+   --semibold: 600;
+}
+
+body {
+  font-family: var(--primary-font);
+  background-image: url('/src/assets/bg.jpg');
+  color: var(--grey);
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+  font-style: normal;
+}
+
+
+.hidden-title {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
