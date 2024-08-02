@@ -1,5 +1,16 @@
 import styled from "styled-components";
+import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 import { fromDesktopScreenForElements } from "../../../mediaQuery";
+
+export const BtnSvg = styled(GoArrowLeft)`
+ width: 42px;
+ height: 42px;
+`;
+
+export const BtnSvgRight = styled(GoArrowRight)`
+  width: 42px;
+  height: 42px;
+`;
 
 export const ButtonsList = styled.ul`
   display: flex; 

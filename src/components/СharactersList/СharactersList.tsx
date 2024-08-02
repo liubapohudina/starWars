@@ -3,35 +3,11 @@ import { CustomSection } from "../CustomSection/CustomSection.styled";
 import { TextH1, ListCharacters } from "./CharactersList.styled";
 import { Loader } from "../Loader/Loader";
 import { CharacterItem } from "./CharactersItem/CharactersItem";
+import CharacterModal from "../Modal/Modal";
 import { ButtonsPages } from "./ButtonsPages/ButtonsPages"; //buttons for navigation
 import { fetchAllCharacters } from "../../services/api";
-
-export type Character = {
-  birth_year: string;
-  created: string;
-  edited: string;
-  eye_color: string;
-  films: number[];
-  gender: string;
-  hair_color: string;
-  height: string;
-  homeworld: number;
-  id: number;
-  mass: string;
-  name: string;
-  skin_color: string;
-  species: number[];
-  starships: number[];
-  url: string;
-  vehicles: number[];
-};
-
-type ApiResponse = {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: Character[];
-};
+import { Character } from "../../types/character";
+import { ApiResponse } from "../../types/apiResponse";
 
 export const Characters: React.FC = () => {
   // State for characters
@@ -41,12 +17,15 @@ export const Characters: React.FC = () => {
   // State for next and previous page URLs
   const [nextPage, setNextPage] = useState<string | null>(null);
   const [prevPage, setPrevPage] = useState<string | null>(null);
+  // State for modal
+  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null); 
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   // Function to fetch characters
   const fetchData = async (url?: string) => {
     setLoading(true);
     try {
-      const response: ApiResponse = await fetchAllCharacters(url);
+      const response: ApiResponse<Character> = await fetchAllCharacters(url);
       setCharacters(response.results);
       setNextPage(response.next);
       setPrevPage(response.previous);
@@ -76,6 +55,17 @@ export const Characters: React.FC = () => {
     }
   };
 
+  // function for modal
+  const handleHeroClick = (id: number, name: string) => {
+    setSelectedCharacter({id, name});
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setSelectedCharacter(null);
+  };
+
   return (
     <CustomSection>
       <TextH1>List of characters</TextH1>
@@ -85,9 +75,14 @@ export const Characters: React.FC = () => {
         <>
           <ListCharacters>
             {characters.map(character => (
-              <CharacterItem key={character.id} character={character} />
+              <CharacterItem key={character.id} character={character} handleHeroClickProps={handleHeroClick}/>
             ))}
           </ListCharacters>
+          <CharacterModal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          selectedCharacter={selectedCharacter}
+        />
           <ButtonsPages handlePrev={handlePrev} handleNext={handleNext} prevPage={prevPage} nextPage={nextPage}/>
         </>
       )}

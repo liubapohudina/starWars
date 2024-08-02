@@ -1,6 +1,5 @@
 import React from "react";
-import { ButtonsList, BtnPages } from "./ButtonsPages.styled";
-import icons from '../../../assets/icons/symbol-defs.svg';
+import { ButtonsList, BtnPages, BtnSvg, BtnSvgRight } from "./ButtonsPages.styled";
 
 type ButtonsPagesProps = {
   handlePrev: () => void;
@@ -12,18 +11,14 @@ type ButtonsPagesProps = {
 export const ButtonsPages:React.FC<ButtonsPagesProps> = ({handlePrev, handleNext, prevPage, nextPage}) => {
   return (
     <ButtonsList>
-      <li>
+      <li key={1}>
        <BtnPages onClick={handlePrev} disabled={!prevPage}>
-              <svg width={42} height={42}>
-                <use href={`${icons}#icon-arrow-left2`}></use>
-              </svg>
+        <BtnSvg/>
        </BtnPages>
       </li>
-      <li> 
+      <li key={2}> 
         <BtnPages onClick={handleNext} disabled={!nextPage}>
-              <svg width={42} height={42}>
-                <use href={`${icons}#icon-arrow-right2`}></use>
-              </svg>
+          <BtnSvgRight/>
         </BtnPages>
       </li>  
     </ButtonsList>

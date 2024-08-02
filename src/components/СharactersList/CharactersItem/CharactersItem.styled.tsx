@@ -16,15 +16,34 @@ export const CharacterName = styled.p`
 `;
 
 export const Item = styled.li`
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 20px;
-    background-color: var(--dark-opacity);
-    border: 1px solid var(--grey);
-    border-radius: 3%;
-    transition: background-color 0.3s ease, border 0.3s ease;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 5px;
+    // cursor: pointer;
+    // padding: 20px;
+    // background-color: var(--dark-opacity);
+    // border: 1px solid var(--grey);
+    // border-radius: 3%;
+    // transition: background-color 0.3s ease, border 0.3s ease;
+
+    // &:hover,
+    // &:focus {
+    //   border: 1px solid var(--orange);
+    //   background-color: var(--orange-opacity);
+    // }
+`;
+
+export const BtnItem = styled.button`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 20px;
+  background-color: var(--dark-opacity);
+  border: 1px solid var(--grey);
+  border-radius: 3%;
+  transition: background-color 0.3s ease, border 0.3s ease;
 
     &:hover,
     &:focus {

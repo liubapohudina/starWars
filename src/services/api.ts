@@ -4,10 +4,12 @@ axios.defaults.baseURL = "https://sw-api.starnavi.io";
 
 interface Endpoints {
   CHARACTERS: string;
+  FILMS: string;
 }
 
 const ENDPOINTS: Endpoints = {
-  CHARACTERS: "/people"
+  CHARACTERS: "/people/",
+  FILMS: "/films/"
 }
 
 
@@ -16,4 +18,11 @@ export const fetchAllCharacters = async (url?: string): Promise<any> => {
   const fetchUrl = url || axios.defaults.baseURL + ENDPOINTS.CHARACTERS;
   return axios.get(fetchUrl)
   .then(response => response.data)
+}
+
+// get films for current character
+
+export const fetchFilmsForCharacterById = async (id: number): Promise<any> => {
+  return axios.get(`${ENDPOINTS.FILMS}?characters=${id}`)
+   .then(response => response.data)
 }
