@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { container, tabletScreenForElements, fromDesktopScreenForElements } from "../../mediaQuery";
+import { container, smallMobileScreenForElements, tabletScreenForElements, fromDesktopScreenForElements } from "../../mediaQuery";
 
 export const HeaderStyled = styled.header`
  ${container};
@@ -8,6 +8,10 @@ export const HeaderStyled = styled.header`
 `;
 
 export const Img = styled.img`
+  ${smallMobileScreenForElements`
+    width: 280px;
+    height: 200px;
+  `};
   width: 300px;
   height: 200px;
   ${tabletScreenForElements`

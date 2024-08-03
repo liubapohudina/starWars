@@ -29,12 +29,13 @@ export const BtnPages = styled.button`
   background-color: var(--dark-opacity);
   border: 1px solid var(--grey);
   border-radius: 18%;
-  transition: background-color 0.3s ease, border 0.3s ease;
+  transition: background-color 0.3s ease, border 0.3s ease, scale 0.3s ease;
 
     &:hover,
     &:focus {
       border: 1px solid var(--orange);
       background-color: var(--orange-opacity);
+      scale: 1.06;
     }
     &:disabled {
       display: none;

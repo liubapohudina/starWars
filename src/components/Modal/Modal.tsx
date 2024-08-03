@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import CharacterGraph from '../CharacterGraf/CharacterGraf';
+import CharacterGraph from '../CharacterGraph/CharacterGraph';
 import { Character } from '../../types/character';
 import { BtnClose, SvgClose } from './Modal.styled';
 
@@ -17,7 +17,7 @@ const CharacterModal: React.FC<CharacterModalProps> = ({ isOpen, onRequestClose,
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      contentLabel="Hero Details"
+      contentLabel="Character Details"
       style={{
         overlay: {
           backgroundColor: 'rgba(0, 0, 0, 0.75)',

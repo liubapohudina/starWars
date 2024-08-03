@@ -1,7 +1,8 @@
-import { css, Interpolation } from "styled-components";
-//=========================================================================================== Value//
+// this file is created for media rules and one rules for container (const container)
 
-type StylesType = Interpolation<any>;
+import { css, Interpolation } from "styled-components";
+type StylesType = Interpolation<any>; // type for props
+//=========================================================================================== Value//
 
 //For side indents
 const mobile = css`
@@ -13,26 +14,18 @@ const tablet = css`
   padding-left: 40px;
 `;
 const desktop = css`
-  padding-right: 80px;
-  padding-left: 80px;
+  padding-right: 60px;
+  padding-left: 60px;
 `;
 //============================================================================================ MediaQuery//
 
-export const smallMobileScreen = css`
-  @media (min-width: 320px) and (max-width: 374.98px) {
-    ${mobile}
-  }
-`;
+// this function for styling elements 
 export const smallMobileScreenForElements = (styles: StylesType) => css`
   @media (min-width: 320px) and (max-width: 374.98px) {
     ${styles}
   }
 `;
-export const mobileScrenn = css`
-  @media (min-width: 375px) and (max-width: 767.98px) {
-    ${mobile}
-  }
-`;
+
 export const mobileScrennForElements = (styles: StylesType) => css`
   @media (min-width: 375px) and (max-width: 767.98px) {
     ${styles}
@@ -43,11 +36,7 @@ export const fromMobileScrennForElements = (styles: StylesType) => css`
     ${styles}
   }
 `;
-export const tabletScreen = css`
-  @media (min-width: 768px) and (max-width: 1023.98px) {
-    ${tablet}
-  }
-`;
+
 export const tabletScreenForElements = (styles: StylesType) => css`
   @media (min-width: 768px) and (max-width: 1439.98px) {
     ${styles}
@@ -59,20 +48,40 @@ export const fromTabletScreenForElements = (styles: StylesType) => css`
   }
 `;
 
-export const desktopScreen = css`
-  @media (min-width: 768px) and (max-width: 1439.98px) {
-    ${desktop}
-  }
-`;
-
 export const fromDesktopScreenForElements = (styles: StylesType) => css`
   @media (min-width: 1440px) {
     ${styles}
   }
 `;
 
+// this variable for create const container
+const smallMobileScreen = css`
+  @media (min-width: 320px) and (max-width: 374.98px) {
+    ${mobile}
+  }
+`;
+
+const mobileScrenn = css`
+  @media (min-width: 375px) and (max-width: 767.98px) {
+    ${mobile}
+  }
+`;
+
+const tabletScreen = css`
+  @media (min-width: 768px) and (max-width: 1439.98px) {
+    ${tablet}
+  }
+`;
+
+const desktopScreen = css`
+  @media (min-width: 1439.98px) {
+    ${desktop}
+  }
+`;
+
 export const container = css`
   ${smallMobileScreen}
   ${mobileScrenn}
-  ${tabletScreen}`
+  ${tabletScreen}
+  ${desktopScreen}`
  ;
