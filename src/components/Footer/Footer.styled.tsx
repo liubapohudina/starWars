@@ -20,6 +20,7 @@ export const FooterText = styled.p`
 export const FooterSvg = styled(AiFillGithub)`
   width: 32px;
   height: 32px;
+  transition: fill 0.3s ease, scale 0.3s ease;
   ${mobileScrennForElements`
     width: 46px;
     height: 46px;
@@ -28,4 +29,10 @@ export const FooterSvg = styled(AiFillGithub)`
     width: 58px;
     height: 58px;
   `};
+
+    &:hover,
+    &:focus {
+    fill: var(--orange);
+    scale: 1.1;
+    }
 `;

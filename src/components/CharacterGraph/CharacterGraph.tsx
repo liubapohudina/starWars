@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ReactFlow, { MiniMap, Controls, Background, Edge, Node, NodeTypes, EdgeTypes } from 'reactflow';
+import ReactFlow, { ReactFlowProvider, Controls, Edge, Node, NodeTypes, EdgeTypes } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { fetchFilmsForCharacterById, fetchStarshipsInFilmForCharacter } from '../../services/api';
 // import types
@@ -7,7 +7,7 @@ import { Character } from '../../types/character';
 import { Film } from '../../types/film';
 import { ApiResponse } from '../../types/apiResponse';
 import { Starship } from '../../types/starship';
-import { GraphBox } from './CharacterGraph.styled';
+import { GraphBox, CustomBackground, CustomMinimap } from './CharacterGraph.styled';
 import { Loader } from '../Loader/Loader';
 // import custom styles for nodes
 import CustomNodeCharacter from './CustomNodes/CustomNodeCharacter/CustumNodeCharacter';
@@ -87,11 +87,13 @@ const CharacterGraph: React.FC<CharacterGraphProps> = ({ selectedCharacter }) =>
   return (
     <GraphBox>
       {loading && <Loader />}
+      <ReactFlowProvider>
       <ReactFlow nodes={nodes} edges={edges} nodeTypes={nodeTypes} edgeTypes={edgeTypes}>
-        <Background color="#aaa" gap={16} />
+        <CustomBackground/>
         <Controls />
-        <MiniMap />
+        <CustomMinimap />
       </ReactFlow>
+      </ReactFlowProvider>
     </GraphBox>
   );
 };

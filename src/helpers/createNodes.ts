@@ -8,16 +8,17 @@ export const createCharacterNode = (character: Character): Node => ({
   id: `hero-${character.id}`,
   type: 'character', // specify custom type
   data: { label: character.name },
-  position: { x: 250, y: 5 }
+  position: { x: 400, y: 5 }
 });
 
 // Function to create film nodes
 export const createFilmNodes = (films: Film[]): Node[] => {
+  const filmlengh = films.length;
   return films.map((film: Film, index: number) => ({
     id: `film-${film.id}`,
     type: 'film',
     data: { label: film.title },
-    position: { x: 200 + (index % 3) * 250, y: 100 + Math.floor(index / 3) * 150 }
+    position: { x: 200 + (index % filmlengh) * 250, y: 200}
   }));
 };
 
@@ -32,13 +33,14 @@ export const createFilmEdges = (films: Film[], characterId: number): Edge[] => {
 };
 
 // Function to create the starship node
-export const createStarshipNodes = (starships: Starship[], filmIndex: number): Node[] =>
-  starships.map((starship, index) => ({
+export const createStarshipNodes = (starships: Starship[], filmIndex: number): Node[] => {
+  return starships.map((starship, index) => ({
     id: `starship-${starship.id}`,
     type: 'starship', // custom type
     data: { label: starship.name },
-    position: { x: 250 + (index % 5) * 250, y: (filmIndex + 1) * 120 + Math.floor(index / 5) * 150 }
+    position: { x: 250 + (index % 5) * 250, y: (filmIndex + 1) * 80 + Math.floor(index / 5) * 150 }
   }));
+};
 
 // function to create the starship edge
 export const createStarshipEdges = (starships: Starship[], filmId: number): Edge[] =>

@@ -1,12 +1,13 @@
 import React from 'react';
-import { EdgeProps, getSmoothStepPath } from 'reactflow';
+import { EdgeProps, getSimpleBezierPath } from 'reactflow';
 import styled from 'styled-components';
 
-// styling compomet for scg path
+// Styling component for edge path
 const StyledPath = styled.path<{ color?: string; strokeWidth?: number }>`
   stroke: ${({ color }) => color || '#222'};
   stroke-width: ${({ strokeWidth }) => strokeWidth || 2}px;
   fill: none;
+  transition: stroke-width 0.2s ease;
 
   &:hover {
     stroke-width: 4px;
@@ -17,15 +18,15 @@ const StyledPath = styled.path<{ color?: string; strokeWidth?: number }>`
   }
 `;
 
-// component for connections between characters and films
+// Component for connections between characters and films
 const CharacterToFilmEdge: React.FC<EdgeProps> = ({ id, sourceX, sourceY, targetX, targetY, style }) => {
-  const [edgePath] = getSmoothStepPath({ sourceX, sourceY, targetX, targetY });
+  const [edgePath] = getSimpleBezierPath({ sourceX, sourceY, targetX, targetY });
   return <StyledPath id={id} d={edgePath} color="#F97300" style={style as React.CSSProperties} />;
 };
 
-// сomponent for connections between films and starships
+// Component for connections between films and starships
 const FilmToStarshipEdge: React.FC<EdgeProps> = ({ id, sourceX, sourceY, targetX, targetY, style }) => {
-  const [edgePath] = getSmoothStepPath({ sourceX, sourceY, targetX, targetY });
+  const [edgePath] = getSimpleBezierPath({ sourceX, sourceY, targetX, targetY });
   return <StyledPath id={id} d={edgePath} color="#003285" style={style as React.CSSProperties} />;
 };
 

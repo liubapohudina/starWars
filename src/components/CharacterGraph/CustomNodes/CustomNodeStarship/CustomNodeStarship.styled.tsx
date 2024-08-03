@@ -15,7 +15,7 @@ export const BoxLabel = styled.div`
 
 export const Label = styled.div`
   margin-top: 30px;
-  color: var(--orange);
+  color: var(--grey);
   word-break: break-word;
   font-family: var(--primary-font);
 `;

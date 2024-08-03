@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { fromTabletScreenForElements, fromDesktopScreenForElements } from "../../mediaQuery";
+import { Background, BackgroundProps, MiniMap, MiniMapProps } from "reactflow";
 
 export const GraphBox = styled.div`
+  background-color: var(--vintage);
   height: 80vh;
   width: 300px;
   ${fromTabletScreenForElements`
@@ -11,3 +13,12 @@ export const GraphBox = styled.div`
     width: 1000px;
   `};
 `;
+
+// Use type assertion to define the type of CustomBackground
+export const CustomBackground = styled(Background)<BackgroundProps>`
+  background-image:  url('/src/assets/bg.jpg');
+` as unknown as typeof Background;
+
+export const CustomMinimap = styled(MiniMap)<MiniMapProps>`
+  background-image:  url('/src/assets/bg.jpg');
+`as unknown as typeof MiniMap;

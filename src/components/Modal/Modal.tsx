@@ -28,6 +28,7 @@ const CharacterModal: React.FC<CharacterModalProps> = ({ isOpen, onRequestClose,
           right: 'auto',
           bottom: 'auto',
           marginRight: '-50%',
+          backgroundColor: '#706A60',
           transform: 'translate(-50%, -50%)',
         },
       }}
