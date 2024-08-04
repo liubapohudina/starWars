@@ -13,9 +13,9 @@ const PATHTOIMG = 'https://starwars-visualguide.com/assets/img/characters/'; // 
 export const CharacterItem: React.FC<CharacterProps> = ({character, handleHeroClickProps}) => {
 
   const imageUrl = `${PATHTOIMG}${character.id}.jpg`;
-
+ 
   return (
-    <li key={character.id}>
+    <li key={character.id} data-testid={`card-element-${character.id}`}>
       <BtnItem onClick={() => handleHeroClickProps(character.id, character.name)}>
         <CharacterName>{character.name}</CharacterName>
         <Img src={imageUrl ? imageUrl : defaultPhoto} alt={character.name}></Img>

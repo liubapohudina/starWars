@@ -18,6 +18,14 @@ This project is created to provide an overview of information about Star Wars ch
   <img src="https://img-blog.csdnimg.cn/dd7e16c42c934a9382f395bf2fb9582e.png?x-oss-process=image/resize,m_fixed,h_224,w_224" alt="vite" width="80" height="80"/>
 </div>
 
+  ## For Testing
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+  <img src="https://habrastorage.org/getpro/habr/upload_files/f70/d80/5ba/f70d805ba22c5c0a8d89a3514e3b56dd.png" alt="vitetest" width="100" height="80"/>
+  <img src="https://th.bing.com/th/id/OIP.ijyb00weKCmmXg76VqtJ8wAAAA?rs=1&pid=ImgDetMain" alt="testing libr" width="80" height="80"/>
+  <img src="https://raw.githubusercontent.com/testing-library/jest-dom/master/other/owl.png" alt="jest dom" width="80" height="80"/>
+</div>
+</div>
+
 
 ## Getting Started
 

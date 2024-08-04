@@ -16,7 +16,7 @@ export const ButtonsPages:React.FC<ButtonsPagesProps> = ({handlePrev, handleNext
         <BtnSvg/>
        </BtnPages>
       </li>
-      <li key={2}> 
+      <li key={2} data-testid='create-btn-footer'> 
         <BtnPages onClick={handleNext} disabled={!nextPage}>
           <BtnSvgRight/>
         </BtnPages>

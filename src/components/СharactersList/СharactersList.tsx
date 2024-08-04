@@ -75,7 +75,7 @@ export const Characters: React.FC = () => {
         <>
           <ListCharacters>
             {characters.map(character => (
-              <CharacterItem key={character.id} character={character} handleHeroClickProps={handleHeroClick}/>
+              <CharacterItem  key={character.id} character={character} handleHeroClickProps={handleHeroClick}/>
             ))}
           </ListCharacters>
           <CharacterModal
