@@ -9,20 +9,40 @@ This project is created to provide an overview of information about Star Wars ch
 ## Technologies Used
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-  <img src="https://th.bing.com/th/id/OIP.IoCLrnfGa9GzPimOovQyDgHaGc?rs=1&pid=ImgDetMain" alt="React" width="80" height="80"/>
-  <img src="https://media.licdn.com/dms/image/D4E05AQGTNQs2XiVFCg/videocover-high/0/1699350316713?e=2147483647&v=beta&t=Ee26AJOJaFleznUGsItIQEfyPJ47YgevzO3XaKWhfQ4" alt="React Flow" width="80" height="80"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" alt="TypeScript" width="80" height="80"/>
-  <img src="https://storage.googleapis.com/zenn-user-upload/topics/77ccd3a252.png" alt="Styled Components" width="80" height="80"/>
-  <img src="https://th.bing.com/th/id/OIP.DVHcjMJMDJ1WeFBAWGKLLgHaF7?rs=1&pid=ImgDetMain" alt="Axios" wwidth="80" height="80"/>
-  <img src="https://th.bing.com/th/id/OIP.F6yFxHdBGTXHVGrHOk3kggHaHa?rs=1&pid=ImgDetMain" alt="npm" width="80" height="80"/>
-  <img src="https://img-blog.csdnimg.cn/dd7e16c42c934a9382f395bf2fb9582e.png?x-oss-process=image/resize,m_fixed,h_224,w_224" alt="vite" width="80" height="80"/>
+  <a href="https://react.dev/"> 
+    <img src="https://th.bing.com/th/id/OIP.IoCLrnfGa9GzPimOovQyDgHaGc?rs=1&pid=ImgDetMain" alt="React" width="80" height="80"/>
+  </a> 
+  <a href="https://reactflow.dev/">
+    <img src="https://media.licdn.com/dms/image/D4E05AQGTNQs2XiVFCg/videocover-high/0/1699350316713?e=2147483647&v=beta&t=Ee26AJOJaFleznUGsItIQEfyPJ47YgevzO3XaKWhfQ4" alt="React Flow" width="80" height="80"/>
+  </a>  
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" alt="TypeScript" width="80" height="80"/>
+  </a>  
+  <a href="https://styled-components.com/">
+    <img src="https://storage.googleapis.com/zenn-user-upload/topics/77ccd3a252.png" alt="Styled Components" width="80" height="80"/>
+  </a>
+  <a href="https://axios-http.com/docs/intro">  
+    <img src="https://th.bing.com/th/id/OIP.DVHcjMJMDJ1WeFBAWGKLLgHaF7?rs=1&pid=ImgDetMain" alt="Axios" wwidth="80" height="80"/>
+  </a>
+  <a href="https://www.npmjs.com/">  
+    <img src="https://th.bing.com/th/id/OIP.F6yFxHdBGTXHVGrHOk3kggHaHa?rs=1&pid=ImgDetMain" alt="npm" width="80" height="80"/>
+  </a>  
+  <a href="https://vitejs.dev/">
+    <img src="https://img-blog.csdnimg.cn/dd7e16c42c934a9382f395bf2fb9582e.png?x-oss-process=image/resize,m_fixed,h_224,w_224" alt="vite" width="80" height="80"/>
+  </a>  
 </div>
 
   ## For Testing
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-  <img src="https://habrastorage.org/getpro/habr/upload_files/f70/d80/5ba/f70d805ba22c5c0a8d89a3514e3b56dd.png" alt="vitetest" width="100" height="80"/>
-  <img src="https://th.bing.com/th/id/OIP.ijyb00weKCmmXg76VqtJ8wAAAA?rs=1&pid=ImgDetMain" alt="testing libr" width="80" height="80"/>
-  <img src="https://raw.githubusercontent.com/testing-library/jest-dom/master/other/owl.png" alt="jest dom" width="80" height="80"/>
+  <a href="https://vitest.dev/">
+    <img src="https://habrastorage.org/getpro/habr/upload_files/f70/d80/5ba/f70d805ba22c5c0a8d89a3514e3b56dd.png" alt="vitest" width="100" height="80"/>
+  </a>
+  <a href="https://testing-library.com/">  
+    <img src="https://th.bing.com/th/id/OIP.ijyb00weKCmmXg76VqtJ8wAAAA?rs=1&pid=ImgDetMain" alt="testing libr" width="80" height="80"/>
+  </a>
+  <a href="https://github.com/testing-library/jest-dom?tab=readme-ov-file#readme">  
+    <img src="https://raw.githubusercontent.com/testing-library/jest-dom/master/other/owl.png" alt="jest dom" width="80" height="80"/>
+  </a>  
 </div>
 </div>
 
@@ -97,4 +117,12 @@ To create a production build of the application, run:
 npm run build
 ```
 This will generate optimized static files in the build directory, which can be deployed to a production server.
+
+## Running unit tests
+
+To run the tests, enter the command:
+
+```bash
+npm test
+```
 

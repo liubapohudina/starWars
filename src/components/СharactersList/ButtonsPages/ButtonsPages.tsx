@@ -12,11 +12,11 @@ export const ButtonsPages:React.FC<ButtonsPagesProps> = ({handlePrev, handleNext
   return (
     <ButtonsList>
       <li key={1}>
-       <BtnPages onClick={handlePrev} disabled={!prevPage}>
+       <BtnPages onClick={handlePrev} disabled={!prevPage} data-testid='create-btn-navigate'>
         <BtnSvg/>
        </BtnPages>
       </li>
-      <li key={2} data-testid='create-btn-footer'> 
+      <li key={2} data-testid='create-item-navigate'> 
         <BtnPages onClick={handleNext} disabled={!nextPage}>
           <BtnSvgRight/>
         </BtnPages>

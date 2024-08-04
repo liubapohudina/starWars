@@ -3,13 +3,13 @@ import { CustomSection } from "../CustomSection/CustomSection.styled";
 import { TextH1, ListCharacters } from "./CharactersList.styled";
 import { Loader } from "../Loader/Loader";
 import { CharacterItem } from "./CharactersItem/CharactersItem";
-import CharacterModal from "../Modal/Modal";
+import CharacterModal from "../CharacterModal/CharacterModal";
 import { ButtonsPages } from "./ButtonsPages/ButtonsPages"; //buttons for navigation
 import { fetchAllCharacters } from "../../services/api";
 import { Character } from "../../types/character";
 import { ApiResponse } from "../../types/apiResponse";
 
-export const Characters: React.FC = () => {
+export const CharactersList: React.FC = () => {
   // State for characters
   const [characters, setCharacters] = useState<Character[]>([]);
   // State for loading process

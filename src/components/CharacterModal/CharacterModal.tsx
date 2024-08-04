@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import CharacterGraph from '../CharacterGraph/CharacterGraph';
 import { Character } from '../../types/character';
-import { BtnClose, SvgClose } from './Modal.styled';
+import { BtnClose, SvgClose } from './CharacterModal.styled';
 
 Modal.setAppElement('#root');
 
@@ -15,6 +15,7 @@ interface CharacterModalProps {
 const CharacterModal: React.FC<CharacterModalProps> = ({ isOpen, onRequestClose, selectedCharacter }) => {
   return (
     <Modal
+      role="dialog"
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Character Details"
@@ -36,7 +37,7 @@ const CharacterModal: React.FC<CharacterModalProps> = ({ isOpen, onRequestClose,
       <BtnClose onClick={onRequestClose}>
         <SvgClose/>
       </BtnClose>
-      {selectedCharacter && <CharacterGraph selectedCharacter={selectedCharacter} />}
+      {selectedCharacter ? <CharacterGraph selectedCharacter={selectedCharacter} /> : <p>No information found</p>}
     </Modal>
   );
 };

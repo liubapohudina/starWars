@@ -1,5 +1,5 @@
 import { Span } from "./Loader.styled"
 
 export const Loader = () => {
-  return (<Span></Span>)
+  return (<Span data-testid="loader"></Span>)
 }

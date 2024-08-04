@@ -16,7 +16,7 @@ const ENDPOINTS: Endpoints = {
 
 
 // get all characters
-export const fetchAllCharacters = async (url?: string): Promise<any> => {
+export const fetchAllCharacters = async (url?: string): Promise<any> => {  // ? applies here because when the first render occurs, no URL is retrieved, and when then the URL arrives when buttons are pressed to navigate between pages
   const fetchUrl = url || axios.defaults.baseURL + ENDPOINTS.CHARACTERS;
   return axios.get(fetchUrl)
   .then(response => response.data)

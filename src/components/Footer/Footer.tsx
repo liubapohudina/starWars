@@ -4,9 +4,9 @@ import { FooterStyled, FooterText, FooterSvg } from "./Footer.styled";
 export const Footer:React.FC = () => {
   return (
   <FooterStyled>
-     <FooterText>We hope that this application will be useful for you</FooterText>
+     <FooterText>I hope that this application will be useful for you</FooterText>
      <a href="https://github.com/liubapohudina/starWars">
-     <FooterSvg />
+        <FooterSvg />
      </a>
   </FooterStyled>
   )
