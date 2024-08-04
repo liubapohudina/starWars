@@ -38,7 +38,7 @@ export const createStarshipNodes = (starships: Starship[], filmIndex: number): N
     id: `starship-${starship.id}`,
     type: 'starship', // custom type
     data: { label: starship.name },
-    position: { x: 250 + (index % 5) * 250, y: (filmIndex + 1) * 80 + Math.floor(index / 5) * 150 }
+    position: { x: 250 + (index % 5) * 250, y: (filmIndex + 1) * 100 + Math.floor(index / 5) * 150 }
   }));
 };
 
