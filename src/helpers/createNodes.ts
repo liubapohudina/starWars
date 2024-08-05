@@ -34,11 +34,15 @@ export const createFilmEdges = (films: Film[], characterId: number): Edge[] => {
 
 // Function to create the starship node
 export const createStarshipNodes = (starships: Starship[], filmIndex: number): Node[] => {
+  let valueforStyle = 3; // var for styles if film > 3 then the distance between the nodes will be smaller for correct layout
+  if(filmIndex > 3) {
+    valueforStyle = 1;
+  }
   return starships.map((starship, index) => ({
     id: `starship-${starship.id}`,
     type: 'starship', // custom type
     data: { label: starship.name },
-    position: { x: 250 + (index % 5) * 250, y: (filmIndex + 1) * 100 + Math.floor(index / 5) * 150 }
+    position: { x: 250 + (index % 5) * 250, y: (filmIndex + valueforStyle) * 100 + Math.floor(index / 5) * 150 }
   }));
 };
 

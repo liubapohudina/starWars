@@ -1,7 +1,6 @@
 import React from "react";
 import { Character } from "../../../types/character";
 import { Img, CharacterName, BtnItem, Tooltip } from "./CharactersItem.styled";
-import defaultPhoto from '../../../assets/person.png';
 
 interface CharacterProps {
   character : Character,
@@ -16,9 +15,9 @@ export const CharacterItem: React.FC<CharacterProps> = ({character, handleHeroCl
  
   return (
     <li key={character.id} data-testid={`card-element-${character.id}`}>
-      <BtnItem onClick={() => handleHeroClickProps(character.id, character.name)}>
+      <BtnItem data-testid={`btn-card-element-${character.id}`} onClick={() => handleHeroClickProps(character.id, character.name)}>
         <CharacterName>{character.name}</CharacterName>
-        <Img src={imageUrl ? imageUrl : defaultPhoto} alt={character.name}></Img>
+        <Img src={imageUrl} alt={character.name}></Img>
         <Tooltip>See more details</Tooltip>
       </BtnItem>
     </li>

@@ -73,7 +73,7 @@ export const CharactersList: React.FC = () => {
         <Loader />
       ) : (
         <>
-          <ListCharacters>
+          <ListCharacters  role="list">
             {characters.map(character => (
               <CharacterItem  key={character.id} character={character} handleHeroClickProps={handleHeroClick}/>
             ))}

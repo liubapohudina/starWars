@@ -17,8 +17,8 @@ import CustomNodeStarship from './CustomNodes/CustomNodeStarship/CustomNodeStarS
 import { CharacterToFilmEdge, FilmToStarshipEdge } from './CustomEdges/CustomEdges';
 import { createFilmNodes, createCharacterNode, createFilmEdges, createStarshipEdges, createStarshipNodes } from '../../helpers/createNodes';
 
-interface CharacterGraphProps {
-  selectedCharacter: Character | null;
+export interface CharacterGraphProps {
+  selectedCharacter: Character;
 }
 
 // custom node types
@@ -69,18 +69,15 @@ const CharacterGraph: React.FC<CharacterGraphProps> = ({ selectedCharacter }) =>
         starshipNodes.push(...createStarshipNodes(starships, i)); //i - film index(need for style position the starship node)
         starshipEdges.push(...createStarshipEdges(starships, film.id));
       }
-      if (selectedCharacter) { // is selectedCharacter is not null call the function
         const characterNode = createCharacterNode(selectedCharacter);
         setNodes([characterNode, ...filmNodes, ...starshipNodes]);// set all nodes
-      } else {
-        return; // if selectedCharacter is null return 
+      
+        setEdges([...filmEdges, ...starshipEdges]);// set all edges
+      } catch (error) {
+         alert(error);
+      } finally {
+        setLoading(false);
       }
-      setEdges([...filmEdges, ...starshipEdges]);// set all edges
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
   };
   
   

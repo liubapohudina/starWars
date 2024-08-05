@@ -35,13 +35,16 @@ This project is created to provide an overview of information about Star Wars ch
   ## For Testing
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
   <a href="https://vitest.dev/">
-    <img src="https://habrastorage.org/getpro/habr/upload_files/f70/d80/5ba/f70d805ba22c5c0a8d89a3514e3b56dd.png" alt="vitest" width="100" height="80"/>
+    <img src="https://habrastorage.org/getpro/habr/upload_files/f70/d80/5ba/f70d805ba22c5c0a8d89a3514e3b56dd.png" alt="vitest" width="120" height="80"/>
   </a>
   <a href="https://testing-library.com/">  
     <img src="https://th.bing.com/th/id/OIP.ijyb00weKCmmXg76VqtJ8wAAAA?rs=1&pid=ImgDetMain" alt="testing libr" width="80" height="80"/>
   </a>
   <a href="https://github.com/testing-library/jest-dom?tab=readme-ov-file#readme">  
     <img src="https://raw.githubusercontent.com/testing-library/jest-dom/master/other/owl.png" alt="jest dom" width="80" height="80"/>
+  </a>
+   <a href="https://sinonjs.org/">  
+    <img src="https://mherman.org/assets/img/blog/sinonjs.png" alt="Sinon JS" width="120" height="80"/>
   </a>  
 </div>
 </div>
@@ -118,11 +121,37 @@ npm run build
 ```
 This will generate optimized static files in the build directory, which can be deployed to a production server.
 
+# Testing
+
 ## Running unit tests
 
 To run the tests, enter the command:
 
 ```bash
 npm test
+```
+You can also run tests with coverage. A report on the coverage of the code by tests will be displayed in the terminal. To do this, run
+
+```bash
+npm run test:coverage
+```
+After executing this command, the coverage folder will be created. There is a report on the tests. There is a report that can be opened for review in a browser, as well as printed.
+
+ <img src="src/assets/coverage.png" alt="coverage"/>
+
+### Opening a report in a browser
+
+1. Open the coverage folder.
+
+2. Locate the index.html file.
+
+3. Open with Live Server.
+
+ <img src="src/assets/get-coverage.png" alt="get-coverage"/>
+
+## After reviewing the report, the coverage folder can be deleted if the report is no longer needed. If necessary, you can always regenerate the report using the:
+
+```bash
+npm run test:coverage
 ```
 

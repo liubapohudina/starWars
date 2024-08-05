@@ -6,7 +6,7 @@ import { BtnClose, SvgClose } from './CharacterModal.styled';
 
 Modal.setAppElement('#root');
 
-interface CharacterModalProps {
+export interface CharacterModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
   selectedCharacter: Character | null;
@@ -34,7 +34,7 @@ const CharacterModal: React.FC<CharacterModalProps> = ({ isOpen, onRequestClose,
         },
       }}
     >
-      <BtnClose onClick={onRequestClose}>
+      <BtnClose onClick={onRequestClose} aria-label='close'>
         <SvgClose/>
       </BtnClose>
       {selectedCharacter ? <CharacterGraph selectedCharacter={selectedCharacter} /> : <p>No information found</p>}
